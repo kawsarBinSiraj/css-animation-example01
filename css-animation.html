@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>css animation</title>
+  <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
+<style>
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+.animation {
+  position: relative;
+  overflow:hidden;
+  height:50vh;
+  padding-bottom: 1rem;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  font-family: 'Shrikhand', cursive;
+}
+
+.animation:after {
+  display:block;
+  content:'';
+  border-top:1px solid red;
+  border-bottom:1px solid red;
+  height:8rem;
+  position: absolute;
+  bottom: 0;
+  -webkit-animation:animation 4s infinite;
+  animation:animation 4s infinite;
+}
+
+@keyframes animation {
+  0% {
+    width:0px;
+    left: 0;
+  }
+  
+  50% {
+    width:100%;
+    left: 100%;
+    
+  }
+  100% {
+    width:0px;
+    left: 0%;
+  }
+}
+
+
+
+.animation > h1 {
+  font-size:4rem;
+  -webkit-text-fill-color:transparent;
+  text-fill-color:transparent;
+  -webkit-background-clip:text;
+  background-clip:text;
+  background-image: linear-gradient(to right, red 0%, green 30% , blue 50% , orange 75% , black 100%);
+  -webkit-background-size: 200px;
+  background-size: 200px;
+  background-repeat: repeat;;
+  -webkit-animation: textAnimation 8s linear infinite;
+  animation: textAnimation 8s linear infinite;
+}
+
+.animation > h1:hover {
+	 -webkit-animation: textAnimation 3s linear infinite;
+      animation: textAnimation 3s linear infinite;
+}
+
+@keyframes textAnimation{
+  0%{
+    background-position: 0% 100%;
+  }
+  100%{
+    background-position: 100% 0%;
+  }
+}
+</style>
+</head>
+<body>
+
+  
+ <div class="animation">
+   <h1><a href="#">kawsarhossain.com</a></h1>
+ </div>
+  
+</body>
+</html>
